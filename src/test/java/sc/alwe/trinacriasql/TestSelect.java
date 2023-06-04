@@ -13,7 +13,7 @@ import sc.alwe.trinacriasql.model.TrinacriaSqlQueryResult;
 
 public class TestSelect {
 
-	private final static String[] orderedCityColumns = { "MILANO", "ROMA", "NAPOLI", "NEW YORK" };
+	private final static String[] orderedCityColumns = { "MILANO", "ROMA", "PALERMO", "NEW YORK" };
 
 	private Connection connection;
 
@@ -30,7 +30,7 @@ public class TestSelect {
 	@Test
 	public void testSelectAsterisk() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city");
+		TrinacriaSqlQueryResult result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city");
 		ResultSet resultSet = result.getResultSet();
 		int expectedId = 1;
 		while (resultSet.next()) {
@@ -47,7 +47,7 @@ public class TestSelect {
 	public void testSelectWhere() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
 		TrinacriaSqlQueryResult result = gsi
-				.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id < 3");
+				.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id < 3");
 		ResultSet resultSet = result.getResultSet();
 		int expectedId = 1;
 		while (resultSet.next()) {
@@ -64,7 +64,7 @@ public class TestSelect {
 	public void testSelectWhereAnd() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
 		TrinacriaSqlQueryResult result = gsi
-				.execute("ripigliammo first_name, last_name mmiez 'a user ar� address � nisciun e fess � true");
+				.execute("pigghiamu first_name, last_name chi veni da user unni address è nuddu e sticchiu è true");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 1;
 		while (resultSet.next()) {
@@ -81,7 +81,7 @@ public class TestSelect {
 	public void testSelectWhereOr() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
 		TrinacriaSqlQueryResult result = gsi
-				.execute("ripigliammo first_name, last_name mmiez 'a user ar� address � nisciun o fess � true");
+				.execute("pigghiamu first_name, last_name chi veni da user unni address è nuddu o sticchiu è true");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 1;
 		String[] names = { "PINCO", "JOHN" };
@@ -100,7 +100,7 @@ public class TestSelect {
 	public void testSelectJoin() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
 		TrinacriaSqlQueryResult result = gsi.execute(
-				"ripigliammo first_name, city_name mmiez 'a user pesc e pesc city ar� fess � true e fk_city_id = city_id");
+				"pigghiamu first_name, city_name chi veni da user iunciuto paro paro city unni sticchiu è true e fk_city_id = city_id");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 1;
 		String[] names = { "PINCO", "JOHN" };
@@ -118,7 +118,7 @@ public class TestSelect {
 	@Test
 	public void testSelectWhereIsNot() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("ripigliammo first_name mmiez 'a user ar� address nun � nisciun");
+		TrinacriaSqlQueryResult result = gsi.execute("pigghiamu first_name chi veni da user unni address nun è nuddu");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 1;
 		String[] names = { "PINCO", "PAOLINO", "FRED" };
@@ -133,7 +133,7 @@ public class TestSelect {
         @Test
 	public void testSelectAs() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("ripigliammo first_name cumme nome, last_name cumme cognome mmiez 'a user ar� address nun � nisciun");
+		TrinacriaSqlQueryResult result = gsi.execute("pigghiamu first_name comu nome, last_name comu cognome chi veni da user unni address nun è nuddu");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 1;
 		String[] names = { "PINCO", "PAOLINO", "FRED" };

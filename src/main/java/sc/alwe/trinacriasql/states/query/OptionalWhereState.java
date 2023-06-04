@@ -16,9 +16,6 @@ import sc.alwe.trinacriasql.states.where.WhereFieldState;
 /**
  * State that allows for an optional WHERE clause, JOIN clause (only when the
  * query is a select) or end of the query.
- * 
- * @author Daniele Nicosia
- *
  */
 public class OptionalWhereState extends AbstractState {
 

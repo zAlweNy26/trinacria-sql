@@ -10,8 +10,8 @@ TrinacriaSQL can be used either as a Java library or as a standalone SQL databas
 
 ### Java library
 
-To use it as a Java library, download the latest jar in the release section and import it into your project, along with the driver of the database you want to use. Then, you can use the methods exposed by the class ```sc.alwe.TrinacriaSQL.TrinacriaSQLInterpreter``` which allow you to either execute a TrinacriaSQL query against your database (to which you will provide a connection) or just translate it into plain old SQL.
-TrinacriaSQL throws a ```ChiFariException``` with useful debugging information whenever an error occurs.
+To use it as a Java library, download the latest jar in the release section and import it into your project, along with the driver of the database you want to use. Then, you can use the methods exposed by the class `sc.alwe.TrinacriaSQL.TrinacriaSQLInterpreter` which allow you to either execute a TrinacriaSQL query against your database (to which you will provide a connection) or just translate it into plain old SQL.
+TrinacriaSQL throws a `ChiFariException` with useful debugging information whenever an error occurs.
 
 ### Database client
 
@@ -25,11 +25,11 @@ The client will ask for a JDBC string representing the database to connect to (i
 
 ## Language basics
 
-Before delving into the specific commands, it's important to consider some general rules to avoid "cuoppo" mistakes:
+Before delving into the specific commands, it's important to consider some general rules to avoid mistakes:
 
 - parenthesis are not valid characters in TrinacriaSQL queries. In the following examples, they are just used to distinguish between (mandatory parameters) and [optional parameters]
 - TrinacriaSQL doesn't allow multi-line queries. Therefore, there's no end-of-query character (like ; in SQL)
-- spacing is very important when using operators! A query using a condition ```a = 5``` will work but the same query with ```a= 5``` or ```a =5``` or ```a=5``` will not
+- spacing is very important when using operators! A query using a condition `a = 5` will work but the same query with `a= 5` or `a =5` or `a=5` will not
 
 ## Data Manipulation Language
 
@@ -37,112 +37,113 @@ Likewise standard SQL, TrinacriaSQL allows performing data manipulation. Here's 
 
 ### Retrieving data
 
-To retrieve data, you can use the ```ripigliammo``` command. Here's the command syntax:
+To retrieve data, you can use the `pigghiamu` command. Here's the command syntax:
 
 ```text
-ripigliammo (<comma_separated_column_names> || tutto chillo ch'era 'o nuostro) mmiez 'a <table_name> [pesc e pesc <table_name>...] [arò <condition>]
+pigghiamu (<comma_separated_column_names> || tuttu chiddu chi cc'è) chi veni da <table_name> [iunciuto paro paro <table_name>...] [unni <condition>]
 ```
 
-The first argument for the ```ripigliammo``` command is the columns to retrieve. They can be specified either as a list of comma-separated values or with the ```tutto chillo ch'era 'o nuostro``` which will return all the columns.
+The first argument for the `pigghiamu` command is the columns to retrieve. They can be specified either as a list of comma-separated values or with the `tuttu chiddu chi cc'è` which will return all the columns.
 
-After the columns, the following parameter is the name of the table where to fetch the data with ```mmiez 'a```. Data can be fetched from multiple tables by using the optional join operator ```pesc e pesc``` followed by another table name. Currently, there's no limit on the number of ```pesc e pesc``` that can be applied to a single ```ripigliammo```. The join condition is specified in the ```arò``` clause, along with the row filtering.
+After the columns, the following parameter is the name of the table where to fetch the data with `chi veni da`. Data can be fetched from multiple tables by using the optional join operator `iunciuto paro paro` followed by another table name. Currently, there's no limit on the number of `iunciuto paro paro` that can be applied to a single `pigghiamu`. 
 
-Finally, you can filter the rows using the optional ```arò``` clause, followed by one or more conditions. The conditions work exactly like in SQL, with a slightly different syntax for some operators (check the [Language Reference](#language-reference) section).
+Finally, you can filter the rows using the optional `unni` clause, followed by one or more conditions. The conditions work exactly like in SQL, with a slightly different syntax for some operators (check the [Language Reference](#language-reference) section).
 
 Here are some sample queries:
 
 ```text
-ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a user  # retrieves all users' data
-ripigliammo email mmiez 'a user arò id = 6 o name è nisciun  # retrieves all the emails of the users with id 6 or null name
-ripigliammo email mmiez 'a user pesc e pesc city pesc e pesc account arò user.id = 6 e user.birth_city = city.id e user.account_id = account.id  # retrieves the data of the user with id 6 along joined with his birth city and his account data
+pigghiamu tuttu chiddu chi cc'è chi veni da user; # retrieves all users' data
+pigghiamu email chi veni da user unni id = 6 o name è nuddu; # retrieves all the emails of the users with id 6 or null name
+pigghiamu email chi veni da user iunciuto paro paro city iunciuto paro paro account unni user.id = 6 e user.birth_city = city.id e user.account_id = account.id; # retrieves the data of the user with id 6 along joined with his birth city and his account data
 ```
 
 ### Deleting data
 
-Data deletion can be performed using the ```facimm na' strage``` command which supports a subset of options from the ```ripigliammo``` command. Here's the syntax:
+Data deletion can be performed using the `livamu tuttu` command which supports a subset of options from the `pigghiamu` command. Here's the syntax:
 
 ```text
-facimm na' strage mmiez 'a <table_name> [arò <condition>]
+livamu tuttu chi veni da <table_name> [unni <condition>]
 ```
 
 Here are some sample queries:
 
 ```text
-facimm na' strage mmiez 'a user  # deletes all users' data
-facimm na' strage mmiez 'a user arò name nun è nisciun o deleted è true  # deletes the users with name not null or with deleted = true
+livamu tuttu chi veni da user; # deletes all users' data
+livamu tuttu chi veni da user unni name nun è nuddu o deleted è true; # deletes the users with name not null or with deleted = true
 ```
 
 ### Updating data
 
-The command ```rifacimm``` is used to update data in a table. The syntax is:
+The command `refacìemu` is used to update data in a table. The syntax is:
 
 ```text
-rifacimm <table_name> accunza <column_1> accussì <value_1>, <column_2> accussì <value_2>, ... [arò <conditions>]
+refacìemu <table_name> mètti <column_1> accussì <value_1>, <column_2> accussì <value_2>, ... [unni <conditions>]
 ```
 
-The  ```accunza``` operator marks the begin of a list of column/values assignments using the assignment operator ```accussì```.
+The `mètti` operator marks the begin of a list of column/values assignments using the assignment operator `accussì`.
 
 Here are some sample queries:
 
 ```text
-rifacimm user accunza name accussì "Pippo"  # sets the name "Pippo" for all the users
-rifacimm user accunza name accussì "Pinco", surname accussì "Pallo" arò name è nisciun  # sets the name to "Pinco" and surname to "Pallo" for all users with null name
+refacìemu user mètti name accussì "Pippo"; # sets the name "Pippo" for all the users
+refacìemu user mètti name accussì "Pinco", surname accussì "Pallo" unni name è nuddu; # sets the name to "Pinco" and surname to "Pallo" for all users with null name
 ```
 
 ### Inserting data
 
-Data insertion can be performed using the ```nzipp 'ngoppa``` operator as following:
+Data insertion can be performed using the `mìettemu rintra` operator as following:
 
 ```text
-nzipp 'ngoppa <table_name> (<column_1>, <column_2>...) chist <value_1>, <value_2>...
+mìettemu rintra <table_name> (<column_1>, <column_2>...) chisti <value_1>, <value_2>...
 ```
 
-After the table name, you can specify a list of columns whose data are being inserted. If not present, TrinacriaSQL will default to all columns. The ```chist``` keyword marks the beginning of a comma-separated list of values to insert. Each insert statement can only add one row.
+After the table name, you can specify a list of columns whose data are being inserted. If not present, TrinacriaSQL will default to all columns. The `chisti` keyword marks the beginning of a comma-separated list of values to insert. Each insert statement can only add one row.
 
 Here are some sample queries:
 
 ```text
-nzipp 'ngoppa user chist 1, "Pinco", "Pallo"  # inserts a new user with all his data
-nzipp 'ngoppa user name chist "Pinco"  # inserts a new user with only his name set
+mìettemu rintra user chisti 1, "Pinco", "Pallo"; # inserts a new user with all his data
+mìettemu rintra user name chisti "Pinco"; # inserts a new user with only his name set
 ```
 
 ## Transaction support
 
-Being a fully ACID compliant language, TrinacriaSQL offers basic transaction management. To begin a transaction, you can issue the command ```ua uagliò```. You can then commit the transaction with the command ```iamme bello ia'``` or perform rollback with the command ```sfaccimm```.
+Being a fully ACID compliant language, TrinacriaSQL offers basic transaction management. To begin a transaction, you can issue the command `we compà`. You can then commit the transaction with the command `finemula ccà` or perform rollback with the command `turnamu nnarrè`.
 
 ## Language reference
 
 Follows a table that roughly maps TrinacriaSQL language to standard SQL:
 
-| TrinacriaSQL keyword           | SQL equivalent | Valid in...            |
-|--------------------------------|----------------|------------------------|
-| ripigliammo                    | SELECT         | SELECT                 |
-| rifacimm                       | UPDATE         | UPDATE                 |
-| nzipp                          | INSERT         | INSERT                 |
-| 'ngoppa                        | INTO           | INSERT                 |
-| facimm na' strage              | DELETE         | DELETE                 |
-| pesc e pesc                    | INNER JOIN     | SELECT                 |
-| mmiez 'a                       | FROM           | SELECT, DELETE         |
-| tutto chillo ch'era 'o nuostro | *              | SELECT                 |
-| arò                            | WHERE          | SELECT, UPDATE, DELETE |
-| e                              | AND            | ANY WHERE CLAUSE       |
-| o                              | OR             | ANY WHERE CLAUSE       |
-| nisciun                        | NULL           | ANY WHERE CLAUSE       |
-| è                              | IS             | ANY WHERE CLAUSE       |
-| nun è                          | IS NOT         | ANY WHERE CLAUSE       |
-| chist                          | VALUES         | INSERT                 |
-| accunza                        | SET            | UPDATE                 |
-| accussì                        | = (assignment) | UPDATE                 |
-| >                              | >              | ANY WHERE CLAUSE       |
-| <                              | <              | ANY WHERE CLAUSE       |
-| = (comparison)                 | = (comparison) | ANY WHERE CLAUSE       |
-| !=                             | !=             | ANY WHERE CLAUSE       |
-| <>                             | <>             | ANY WHERE CLAUSE       |
-| <=                             | <=             | ANY WHERE CLAUSE       |
-| >=                             | >=             | ANY WHERE CLAUSE       |
-| sfaccimm                       | ROLLBACK       | TRANSACTION            |
-| iamme bello ia'                | COMMIT         | TRANSACTION            |
-| ua uagliò                      | BEGIN TRANSACTION | TRANSACTION         |
+| TrinacriaSQL keyword  | SQL equivalent    | Valid in...            |
+|-----------------------|-------------------|------------------------|
+| pigghiamu             | SELECT            | SELECT                 |
+| refacìemu             | UPDATE            | UPDATE                 |
+| mìettemu              | INSERT            | INSERT                 |
+| rintra                | INTO              | INSERT                 |
+| livamu tuttu          | DELETE            | DELETE                 |
+| iunciuto paro paro    | INNER JOIN        | SELECT                 |
+| chi veni da           | FROM              | SELECT, DELETE         |
+| tuttu chiddu chi cc'è | *                 | SELECT                 |
+| comu                  | AS                | SELECT                 |
+| unni                  | WHERE             | SELECT, UPDATE, DELETE |
+| e                     | AND               | ANY WHERE CLAUSE       |
+| o                     | OR                | ANY WHERE CLAUSE       |
+| nuddu                 | NULL              | ANY WHERE CLAUSE       |
+| è                     | IS                | ANY WHERE CLAUSE       |
+| nun è                 | IS NOT            | ANY WHERE CLAUSE       |
+| chisti                | VALUES            | INSERT                 |
+| mètti                 | SET               | UPDATE                 |
+| accussì               | = (assignment)    | UPDATE                 |
+| >                     | >                 | ANY WHERE CLAUSE       |
+| <                     | <                 | ANY WHERE CLAUSE       |
+| = (comparison)        | = (comparison)    | ANY WHERE CLAUSE       |
+| !=                    | !=                | ANY WHERE CLAUSE       |
+| <>                    | <>                | ANY WHERE CLAUSE       |
+| <=                    | <=                | ANY WHERE CLAUSE       |
+| >=                    | >=                | ANY WHERE CLAUSE       |
+| turnamu nnarrè        | ROLLBACK          | TRANSACTION            |
+| finemula ccà          | COMMIT            | TRANSACTION            |
+| we compà              | BEGIN TRANSACTION | TRANSACTION            |
 
 ## Supported Database
 
@@ -152,13 +153,9 @@ TrinacriaSQL has been extensively tested with MySQL and H2. Other databases may 
 
 Improvements are always appreciated! If you want to contribute to this project though, remember to open an issue with your suggestion before doing any changes. This will help you avoid working on something that won't get merged.
 
-## Project status
-
-This project is considered completed and won't be developed further.
-
 ## Contacts
 
-You can contact me using my account e-mail or opening an issue on this repo. I'll try to reply ASAP.
+You can contact me using the informations in my GitHub profile or opening an issue on this repository. I'll try to reply as soon as I can.
 
 ## License
 

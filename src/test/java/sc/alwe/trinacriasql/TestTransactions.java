@@ -28,10 +28,10 @@ public class TestTransactions {
 	@Test
 	public void testTransactionRollback() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ua uagli�");
-		gsi.execute("nzipp 'ngoppa city chist 6, 'RHO'");
+		gsi.execute("we compà");
+		gsi.execute("mìettemu rintra city chisti 6, 'RHO'");
 		TrinacriaSqlQueryResult result = gsi
-				.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id = 6");
+				.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id = 6");
 		ResultSet resultSet = result.getResultSet();
 		int expectedCount = 1;
 		while (resultSet.next()) {
@@ -39,8 +39,8 @@ public class TestTransactions {
 		}
 		Assert.assertEquals(expectedCount, 2);
 
-		gsi.execute("sfaccimm");
-		result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id = 6");
+		gsi.execute("turnamu nnarrè");
+		result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id = 6");
 		resultSet = result.getResultSet();
 		expectedCount = 1;
 		while (resultSet.next()) {
@@ -52,10 +52,10 @@ public class TestTransactions {
 	@Test
 	public void testTransactionCommit() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ua uagli�");
-		gsi.execute("nzipp 'ngoppa city chist 6, 'RHO'");
+		gsi.execute("we compà");
+		gsi.execute("mìettemu rintra city chisti 6, 'RHO'");
 		TrinacriaSqlQueryResult result = gsi
-				.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id = 6");
+				.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id = 6");
 		ResultSet resultSet = result.getResultSet();
 		int expectedCount = 1;
 		while (resultSet.next()) {
@@ -63,8 +63,8 @@ public class TestTransactions {
 		}
 		Assert.assertEquals(expectedCount, 2);
 
-		gsi.execute("iamme bello ia'");
-		result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id = 6");
+		gsi.execute("finemula ccà");
+		result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id = 6");
 		resultSet = result.getResultSet();
 		expectedCount = 1;
 		while (resultSet.next()) {

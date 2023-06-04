@@ -5,9 +5,6 @@ import java.util.List;
 
 /**
  * Context wrapper for the parsed query.
- * 
- * @author Daniele Nicosia
- *
  */
 public class QueryInfo {
 

@@ -5,9 +5,6 @@ import sc.alwe.trinacriasql.model.QueryInfo;
 
 /**
  * Base class for any state used by the TrinacriaSQL parser.
- * 
- * @author Daniele Nicosia
- *
  */
 public abstract class AbstractState {
 

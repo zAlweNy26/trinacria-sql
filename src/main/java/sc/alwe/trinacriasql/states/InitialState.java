@@ -13,9 +13,6 @@ import sc.alwe.trinacriasql.states.query.UpdateSetState;
 /**
  * First state when parsing a query. It switches through the various possible
  * queries according to the first token.
- * 
- * @author Daniele Nicosia
- *
  */
 public class InitialState extends AbstractState {
 

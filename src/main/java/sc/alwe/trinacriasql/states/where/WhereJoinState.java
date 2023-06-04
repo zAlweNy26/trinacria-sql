@@ -10,9 +10,6 @@ import sc.alwe.trinacriasql.states.AbstractState;
 /**
  * State for joining two WHERE subclause using an AND or OR operator, or
  * finishing the WHERE clause.
- * 
- * @author Daniele Nicosia
- *
  */
 public class WhereJoinState extends AbstractState {
 

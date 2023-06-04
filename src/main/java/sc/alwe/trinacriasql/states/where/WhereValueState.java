@@ -9,9 +9,6 @@ import sc.alwe.trinacriasql.states.AbstractState;
 /**
  * State for completing the last WHERE subclause in the format "field operator
  * value" by inserting the value.
- * 
- * @author Daniele Nicosia
- *
  */
 public class WhereValueState extends AbstractState {
 

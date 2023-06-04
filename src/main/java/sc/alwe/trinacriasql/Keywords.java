@@ -5,9 +5,6 @@ import java.util.List;
 
 /**
  * Keywords used by TrinacriaSQL.
- * 
- * @author Daniele Nicosia
- *
  */
 public class Keywords {
 
@@ -15,8 +12,8 @@ public class Keywords {
 	public static final String UPDATE_KEYWORD = "refacìemu";
 	public static final String[] INSERT_KEYWORDS = { "mìettemu", "rintra" };
 	public static final String[] DELETE_KEYWORDS = { "livamu", "tuttu" };
-	public static final String[] JOIN_KEYWORDS = { "iuncemo", "paro", "paro" };
-	public static final String[] FROM_KEYWORDS = { "veni", "da" };
+	public static final String[] JOIN_KEYWORDS = { "iunciuto", "paro", "paro" };
+	public static final String[] FROM_KEYWORDS = { "chi", "veni", "da" };
 	public static final String[] ASTERISK_KEYWORDS = { "tuttu", "chiddu", "chi", "cc'è" };
 	public static final String WHERE_KEYWORD = "unni";
 	public static final String[] BEGIN_TRANSACTION_KEYWORDS = { "we", "compà" };
@@ -28,7 +25,7 @@ public class Keywords {
 	public static final String IS_KEYWORD = "è";
 	public static final String VALUES_KEYWORD = "chisti";
 	public static final String[] IS_NOT_KEYWORDS = { "nun", "è" };
-	public static final String SET_KEYWORD = "mèttiri";
+	public static final String SET_KEYWORD = "mètti";
 	public static final List<String> WHERE_OPERATORS = Arrays.asList(">", "<", "=", "!=", "<>", ">=", "<=",
 		Keywords.IS_KEYWORD, Keywords.IS_NOT_KEYWORDS[0]);
 	public static final String SET_EQUAL_KEYWORD = "accussì";

@@ -8,9 +8,6 @@ import sc.alwe.trinacriasql.states.AbstractState;
 /**
  * State for creating a new WHERE subclause in the format "field operator
  * value" by inserting the field name.
- * 
- * @author Daniele Nicosia
- *
  */
 public class WhereFieldState extends AbstractState {
 

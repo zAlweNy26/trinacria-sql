@@ -11,9 +11,6 @@ import sc.alwe.trinacriasql.states.GreedyMatchKeywordState;
 /**
  * State that allows a select to switch between the * operator and the column
  * names to rietrieve.
- * 
- * @author Daniele Nicosia
- *
  */
 public class SelectColumnsState extends AbstractState {
 

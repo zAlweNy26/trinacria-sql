@@ -9,9 +9,6 @@ import sc.alwe.trinacriasql.model.QueryInfo;
 /**
  * Consumes any token applying the given function and then moves to the next
  * state.
- * 
- * @author Daniele Nicosia
- *
  */
 public class AnyTokenConsumerState extends AbstractState {
 

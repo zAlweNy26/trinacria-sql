@@ -12,9 +12,6 @@ import sc.alwe.trinacriasql.model.QueryInfo;
  * State that parses a list of values, separed by a comma. It stops when there's
  * no more comma and checks if the token after is the expected one (set in the
  * constructor). It can be configured to be a final state.
- * 
- * @author Matteo Baccan
- *
  */
 public class CommaSeparedValuesWithAliasState extends AbstractState {
 

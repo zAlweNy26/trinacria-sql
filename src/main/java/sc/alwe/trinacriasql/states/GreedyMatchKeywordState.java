@@ -8,9 +8,6 @@ import sc.alwe.trinacriasql.model.QueryInfo;
 /**
  * State that proceeds to the next one if all the given keywords are matched,
  * otherwise throws an exception.
- * 
- * @author Daniele Nicosia
- *
  */
 public class GreedyMatchKeywordState extends AbstractState {
 

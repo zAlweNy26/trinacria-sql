@@ -5,9 +5,6 @@ import sc.alwe.trinacriasql.model.QueryInfo;
 
 /**
  * State that represents the end of a query.
- * 
- * @author Daniele Nicosia
- *
  */
 public class FinalState extends AbstractState {
 

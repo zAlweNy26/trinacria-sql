@@ -7,9 +7,6 @@ import sc.alwe.trinacriasql.model.QueryInfo;
 
 /**
  * States that proceeds if a specific token is matched exactly.
- * 
- * @author Daniele Nicosia
- *
  */
 public class SingleTokenMatchState extends AbstractState {
 

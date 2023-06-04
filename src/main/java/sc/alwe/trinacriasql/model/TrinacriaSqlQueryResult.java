@@ -4,9 +4,6 @@ import java.sql.ResultSet;
 
 /**
  * Wrapper around JDBC query results, used by TrinacriaSQL.
- * 
- * @author Daniele Nicosia
- *
  */
 public class TrinacriaSqlQueryResult {
 	

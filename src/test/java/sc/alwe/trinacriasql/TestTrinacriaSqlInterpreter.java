@@ -27,12 +27,12 @@ public class TestTrinacriaSqlInterpreter {
 	@Test(expected = ChiFariException.class)
 	public void testWrongDataTypeInsert() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("nzipp 'ngoppa city chist 'RHO', 7");
+		gsi.execute("mìettemu rintra city chisti 'RHO', 7");
 	}
 
 	@Test
 	public void testSqlConversion() throws SQLException {
-		String trinacriaQuery = "nzipp 'ngoppa city chist 6, 8";
+		String trinacriaQuery = "mìettemu rintra city chisti 6, 8";
 		String sqlQuery = TrinacriaSqlInterpreter.toSqlQuery(trinacriaQuery);
 		Assert.assertEquals("INSERT INTO city VALUES ( 6, 8 )", sqlQuery);
 	}

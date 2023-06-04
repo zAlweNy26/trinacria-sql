@@ -13,9 +13,6 @@ import sc.alwe.trinacriasql.model.TrinacriaSqlQueryResult;
 
 /**
  * Shell wrapper on the {@link TrinacriaSqlInterpreter}.
- * 
- * @author Daniele Nicosia
- *
  */
 public class TrinacriaSqlShell {
 

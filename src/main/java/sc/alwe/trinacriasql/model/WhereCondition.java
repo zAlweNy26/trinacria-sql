@@ -2,9 +2,6 @@ package sc.alwe.trinacriasql.model;
 
 /**
  * Represents a statement in a where condition of a TrinacriaSQL query.
- * 
- * @author Daniele Nicosia
- *
  */
 public class WhereCondition {
 

@@ -17,9 +17,6 @@ import sc.alwe.trinacriasql.states.InitialState;
 
 /**
  * Interpreter for the TrinacriaSQL.
- * 
- * @author Daniele Nicosia
- *
  */
 public class TrinacriaSqlInterpreter {
 

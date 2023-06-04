@@ -5,9 +5,6 @@ import java.util.List;
 /**
  * Exception thrown by TrinacriaSQL when an error occurs during query
  * parsing/execution.
- * 
- * @author Daniele Nicosia
- *
  */
 public class ChiFariException extends RuntimeException {
 

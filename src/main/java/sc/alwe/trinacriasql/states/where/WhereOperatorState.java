@@ -10,9 +10,6 @@ import sc.alwe.trinacriasql.states.GreedyMatchKeywordState;
 /**
  * State for continuing the last WHERE subclause in the format "field operator
  * value" by inserting the operator.
- * 
- * @author Daniele Nicosia
- *
  */
 public class WhereOperatorState extends AbstractState {
 

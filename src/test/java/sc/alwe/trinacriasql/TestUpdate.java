@@ -28,17 +28,17 @@ public class TestUpdate {
 	@Test
 	public void testUpdateAll() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("rifacimm city accunza city_name accuss� 'NAPULI', city_id accuss� 10");
+		TrinacriaSqlQueryResult result = gsi.execute("refacìemu city mètti city_name accussì 'PALIEMMU', city_id accussì 10");
 		Assert.assertEquals((Integer) 4, result.getAffectedRows());
 		
-		result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city");
+		result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 0;
 		while (resultSet.next()) {
 			int id = resultSet.getInt(1);
 			String name = resultSet.getString(2);
 			Assert.assertEquals(10, id);
-			Assert.assertEquals("NAPULI", name);
+			Assert.assertEquals("PALIEMMU", name);
 			counter++;
 		}
 		Assert.assertEquals(4, counter);
@@ -47,17 +47,17 @@ public class TestUpdate {
 	@Test
 	public void testUpdateWhere() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("rifacimm city accunza city_name accuss� 'NAPULI', city_id accuss� 10 ar� city_id = 1");
+		TrinacriaSqlQueryResult result = gsi.execute("refacìemu city mètti city_name accussì 'PALIEMMU', city_id accussì 10 unni city_id = 1");
 		Assert.assertEquals((Integer) 1, result.getAffectedRows());
 		
-		result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id = 10");
+		result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id = 10");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 0;
 		while (resultSet.next()) {
 			int id = resultSet.getInt(1);
 			String name = resultSet.getString(2);
 			Assert.assertEquals(10, id);
-			Assert.assertEquals("NAPULI", name);
+			Assert.assertEquals("PALIEMMU", name);
 			counter++;
 		}
 		Assert.assertEquals(1, counter);

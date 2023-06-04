@@ -29,10 +29,10 @@ public class TestDelete {
 	@Test
 	public void testDeleteAll() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("facimm na' strage mmiez 'a city");
+		TrinacriaSqlQueryResult result = gsi.execute("livamu tuttu chi veni da city");
 		Assert.assertEquals((Integer) 4, result.getAffectedRows());
 		
-		result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city");
+		result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 0;
 		while (resultSet.next()) {
@@ -44,10 +44,10 @@ public class TestDelete {
 	@Test
 	public void testDeleteWithWhere() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("facimm na' strage mmiez 'a city ar� city_id >= 2");
+		TrinacriaSqlQueryResult result = gsi.execute("livamu tuttu chi veni da city unni city_id >= 2");
 		Assert.assertEquals((Integer) 3, result.getAffectedRows());
 		
-		result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city");
+		result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 0;
 		while (resultSet.next()) {

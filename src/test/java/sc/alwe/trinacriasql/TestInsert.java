@@ -28,10 +28,10 @@ public class TestInsert {
 	@Test
 	public void testInsert() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("nzipp 'ngoppa city chist 6, 'RHO'");
+		TrinacriaSqlQueryResult result = gsi.execute("mìettemu rintra city chisti 6, 'RHO'");
 		Assert.assertEquals((Integer) 1, result.getAffectedRows());
 		
-		result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id = 6 e city_name = 'RHO'");
+		result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id = 6 e city_name = 'RHO'");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 0;
 		while (resultSet.next()) {
@@ -43,10 +43,10 @@ public class TestInsert {
 	@Test
 	public void testInsertWithColumnNames() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		TrinacriaSqlQueryResult result = gsi.execute("nzipp 'ngoppa city city_name chist 'RHO'");
+		TrinacriaSqlQueryResult result = gsi.execute("mìettemu rintra city city_name chisti 'RHO'");
 		Assert.assertEquals((Integer) 1, result.getAffectedRows());
 		
-		result = gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id � nisciun e city_name = 'RHO'");
+		result = gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id � nuddu e city_name = 'RHO'");
 		ResultSet resultSet = result.getResultSet();
 		int counter = 0;
 		while (resultSet.next()) {

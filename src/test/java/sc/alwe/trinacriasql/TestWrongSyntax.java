@@ -26,66 +26,66 @@ public class TestWrongSyntax {
 	@Test(expected = ChiFariException.class)
 	public void testWrongInitialKeyword() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("uella");
+		gsi.execute("wella");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testSelectDoubleComma() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ripigliammo a , ,");
+		gsi.execute("pigghiamu a , ,");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testSelectWrongFrom() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ripigliammo a chist");
+		gsi.execute("pigghiamu a chisti");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testQueryEndExpected() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("sfaccimm wrong");
+		gsi.execute("turnamu nnarrè wrong");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testWrongLongOperator() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ripigliammo tutto proprio tutto");
+		gsi.execute("pigghiamu tutto proprio tutto");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testIncompleteQuery() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ripigliammo");
+		gsi.execute("pigghiamu");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testWhereInvalidOperator() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id !! 4");
+		gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id !! 4");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testWrongSelectWhereJoinOperator() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city ar� city_id <= 4 ma 5 > 1");
+		gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city unni city_id <= 4 ma 5 > 1");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testWrongSelectWhereClause() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("ripigliammo tutto chillo ch'era 'o nuostro mmiez 'a city quando city_id <= 4 e 5 > 1");
+		gsi.execute("pigghiamu tuttu chiddu chi cc'è chi veni da city quando city_id <= 4 e 5 > 1");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testWrongUpdateSetClause() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("rifacimm city cambia city_id = 1");
+		gsi.execute("refacìemu city cambia city_id = 1");
 	}
 	
 	@Test(expected = ChiFariException.class)
 	public void testWrongUpdateWhereClause() throws SQLException {
 		TrinacriaSqlInterpreter gsi = new TrinacriaSqlInterpreter(connection);
-		gsi.execute("rifacimm city accunza city_id accuss� 1 e basta");
+		gsi.execute("refacìemu city mètti city_id accussì 1 e basta");
 	}
 }

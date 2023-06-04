@@ -13,9 +13,6 @@ import sc.alwe.trinacriasql.states.where.WhereFieldState;
 /**
  * State for an update when the first value is set. Allows to continue setting
  * values or moving on to an optional where clause.
- * 
- * @author Daniele Nicosia
- *
  */
 public class UpdateSetState extends AbstractState {
 
